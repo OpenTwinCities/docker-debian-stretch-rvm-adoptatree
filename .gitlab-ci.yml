@@ -4,7 +4,6 @@ services:
 
 stages:
   - test
-  - release
 
 variables:
   DOCKER_HOST: tcp://docker:2375
@@ -17,9 +16,19 @@ before_script:
   - apk update
   - apk add --no-cache bash
 
-test:
-  stage: test
+test_master:
+  stage:test
   script:
     - docker build -t $DOCKER_IMAGE .
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/push-image.sh | bash -s $DOCKER_IMAGE
+  only:
+    - master
+
+test_other:
+  stage: test
+  script:
+    - docker build -t $DOCKER_IMAGE .
+    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
+  except:
+    - master
