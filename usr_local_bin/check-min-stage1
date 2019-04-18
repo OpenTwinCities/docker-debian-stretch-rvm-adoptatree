@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo '#######################'
 echo 'BEGIN min sanity checks'
