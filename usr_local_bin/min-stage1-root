@@ -19,9 +19,9 @@ export DEBCONF_NOWARNINGS='true'
 export HOME=/root
 export LC_ALL=C
 
-echo '######################'
-echo 'BEGIN min-root actions'
-echo '######################'
+echo '#############################'
+echo 'BEGIN min-stage1-root actions'
+echo '#############################'
 
 # Execute only in Docker
 # Skip in Vagrant
@@ -66,9 +66,9 @@ echo '-----------------------'
 echo 'apt-get install -y nano'
 apt-get install -y nano
 
-echo '#########################'
-echo 'FINISHED min-root actions'
-echo '#########################'
+echo '################################'
+echo 'FINISHED min-stage1-root actions'
+echo '################################'
 
 su -c /usr/local/bin/min-stage1-user $REGULAR_USER
 /usr/local/bin/finalize-root

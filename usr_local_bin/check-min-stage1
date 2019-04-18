@@ -1,16 +1,9 @@
 #!/bin/bash
 set -e
 
-echo '#######################'
-echo 'BEGIN min sanity checks'
-echo '#######################'
-
-# BEGIN: activate NVM
-export NVM_DIR="/home/`whoami`/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-# END: activate NVM
-
-nvm use node # Activate Node
+echo '##############################'
+echo 'BEGIN min-stage1 sanity checks'
+echo '##############################'
 
 echo '-------------------'
 echo 'cat /etc/os-release'
@@ -36,82 +29,6 @@ echo '--------------'
 echo 'nano --version'
 nano --version
 
-echo '--------------'
-echo 'tree --version'
-tree --version
-
-echo '--------------'
-echo 'curl --version'
-curl --version
-
-echo '-------'
-echo 'perl -v'
-perl -v
-
-echo '-----------------------'
-echo 'puppet master --version'
-puppet master --version
-
-echo '------------'
-echo 'chef-solo -v'
-chef-solo -v
-
-echo '-----------------'
-echo 'ansible --version'
-ansible --version
-
-echo '--------------'
-echo 'heroku version'
-heroku version
-
-echo '-------------'
-echo 'git --version'
-git --version
-
-echo '-------------------'
-echo 'python2.7 --version'
-python2.7 --version
-
-echo '-----------------'
-echo 'python3 --version'
-python3 --version
-
-echo '--------------'
-echo 'command -v nvm'
-command -v nvm
-
-echo '-------------'
-echo 'nvm --version'
-nvm --version
-
-echo '-----------'
-echo 'npm version'
-npm version
-
-echo '-------'
-echo 'node -v'
-node -v
-
-echo '---------------------'
-echo 'npm list -g --depth 0'
-npm list -g --depth 0
-
-echo '--------------'
-echo 'yarn --version'
-yarn --version
-
-echo '---------------'
-echo 'redis-server -v'
-redis-server -v
-
-echo '----------------'
-echo 'sqlite3 -version'
-sqlite3 -version
-
-echo '--------------'
-echo 'psql --version'
-psql --version
-
-echo '##########################'
-echo 'FINISHED min sanity checks'
-echo '##########################'
+echo '#################################'
+echo 'FINISHED min-stage1 sanity checks'
+echo '#################################'
