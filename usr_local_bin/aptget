@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Set environment variables to cut down on annoying warning messages
+export DEBIAN_FRONTEND='noninteractive'
+export DEBCONF_NOWARNINGS='true'
+export HOME=/root
+export LC_ALL=C
+
+echo '+++++++++++++++++++++++'
+echo 'BEGIN preparing apt-get'
+echo '+++++++++++++++++++++++'
+
+echo '-------------'
+echo 'cd / && du -s'
+cd / && du -s
+
+echo '--------------'
+echo "apt-get update"
+apt-get update
+
+# NOTE: Skipping this test results in the following message for many other apt-get tasks:
+# debconf: delaying package configuration, since apt-utils is not installed
+echo '----------------------------'
+echo 'apt-get install -y apt-utils'
+apt-get install -y apt-utils
+
+echo '------------------'
+echo "apt-get upgrade -y"
+apt-get upgrade -y
+
+echo '-------------'
+echo 'cd / && du -s'
+cd / && du -s
+
+echo '++++++++++++++++++++++++++'
+echo 'FINISHED preparing apt-get'
+echo '++++++++++++++++++++++++++'
