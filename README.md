@@ -1,5 +1,7 @@
 # Docker Debian Buster - Minimal - Stage 1
 
+[![pipeline status](https://gitlab.com/rubyonracetracks/docker-debian-buster-min-stage1/badges/master/pipeline.svg)](https://gitlab.com/rubyonracetracks/docker-debian-buster-min-stage1/commits/master)
+
 This repository is used for building the Stage 1 Minimal Debian Buster Docker image for [Ruby on Racetracks](https://www.rubyonracetracks.com/).
 
 ## Name of This Docker Image
