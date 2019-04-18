@@ -25,4 +25,5 @@ registry.gitlab.com/rubyonracetracks/docker-debian-buster-min-stage1
 
 ## Build Process (Automatic)
 * The process of building and pushing the Docker image is handled by GitLab CI.  The .gitlab-ci.yml file contains the configurations.
-* Note that the process of building and pushing the Docker image is a test.  The build process is set up to stop if 
+* Note that the process of building and pushing the Docker image is a test.  The build process is set to abort immediately in the event of an error.  This prevents a good Docker image in the repository from being replaced with a defective one.
+* The new image created in the build process is uploaded to the GitLab registry ONLY when working in the master branch.
