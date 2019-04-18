@@ -70,7 +70,7 @@ echo '#########################'
 echo 'FINISHED min-root actions'
 echo '#########################'
 
-su -c /usr/local/bin/min-user $REGULAR_USER
+su -c /usr/local/bin/min-stage1-user $REGULAR_USER
 /usr/local/bin/finalize-root
 su -c /usr/local/bin/finalize-user $REGULAR_USER
 su -c /usr/local/bin/check $REGULAR_USER
