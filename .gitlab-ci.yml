@@ -20,6 +20,6 @@ before_script:
 test:
   stage: test
   script:
-    - docker build -t $DOCKER_IMAGE:test .
-    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/test-image.sh | sh -s $DOCKER_IMAGE:test
-    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/push-image.sh | sh -s $DOCKER_IMAGE:test
+    - docker build -t $DOCKER_IMAGE .
+    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
+    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/push-image.sh | bash -s $DOCKER_IMAGE
