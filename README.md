@@ -7,7 +7,7 @@ This repository is used for building the Stage 1 Minimal Debian Buster Docker im
 ## Name of This Docker Image
 registry.gitlab.com/rubyonracetracks/docker-debian-buster-min-stage1
 
-## Parent Docker Image
+## Upstream Docker Image
 [Official Debian Buster Docker image](https://hub.docker.com/_/debian)
 
 ## What's Added
