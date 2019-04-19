@@ -20,12 +20,5 @@ registry.gitlab.com/rubyonracetracks/docker-debian-buster-min-stage1
 * This Docker image is a basic building block for all other Docker images for [Ruby on Racetracks](https://www.rubyonracetracks.com/).
 * This Docker image is deliberately kept small in to minimize the time needed for building, uploading, and downloading this image.  This is useful for getting quick feedback when experimenting.
 
-## Build Process (Manual)
-* You MUST have Docker installed.  How to do this is covered in the [Different Docker Tutorial](https://www.differentdockertutorial.com/).
-* Enter the command "sh build.sh" to start the build process.  The logging output file is in the log directory.
-* NOTE: This manual process is used for experimental purposes and is NOT used to push Docker images.
-
-## Build Process (Automatic)
-* The process of building and pushing the Docker image is handled by GitLab CI.  The .gitlab-ci.yml file contains the configurations.
-* Note that the process of building and pushing the Docker image is a test.  The build process is set to abort immediately in the event of an error.  This prevents a good Docker image in the repository from being replaced with a defective one.
-* The new image created in the build process is uploaded to the GitLab registry ONLY when working in the master branch.
+## More Information
+General information common to all Docker Debian Buster build repositories is in the [FAQ](https://gitlab.com/rubyonracetracks/docker-debian-buster-common/blob/master/FAQ.md).
