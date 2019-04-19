@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
 
-echo '##############################'
-echo 'BEGIN min-stage1 sanity checks'
-echo '##############################'
+ABBREV='min-stage1'
+
+echo '###########################'
+echo "BEGIN $ABBREV sanity checks"
+echo '###########################'
 
 echo '-------------------'
 echo 'cat /etc/os-release'
@@ -29,6 +31,6 @@ echo '--------------'
 echo 'nano --version'
 nano --version
 
-echo '#################################'
-echo 'FINISHED min-stage1 sanity checks'
-echo '#################################'
+echo '##############################'
+echo "FINISHED $ABBREV sanity checks"
+echo '##############################'

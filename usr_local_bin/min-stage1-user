@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
 
-echo '#############################'
-echo 'BEGIN min-stage1-user actions'
-echo '#############################'
+ABBREV='min-stage1'
+
+echo '##########################'
+echo "BEGIN $ABBREV-user actions"
+echo '##########################'
 
 echo '------------------------------------------------------------------'
 echo "Setting /home/`whoami`/.bashrc to automatically record login times"
@@ -17,6 +19,6 @@ echo 'echo "cat /home/`whoami`/timestamp.txt"' >> /home/`whoami`/.bashrc
 echo 'cat "/home/`whoami`/timestamp.txt"' >> /home/`whoami`/.bashrc
 echo 'cd /home/`whoami`/shared' >> /home/`whoami`/.bashrc
 
-echo '################################'
-echo 'FINISHED min-stage1-user actions'
-echo '################################'
+echo '#############################'
+echo "FINISHED $ABBREV-user actions"
+echo '#############################'
