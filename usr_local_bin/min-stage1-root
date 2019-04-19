@@ -79,6 +79,6 @@ su -c /usr/local/bin/check $REGULAR_USER
 
 T_FINISH=$(date +'%s')
 T_ELAPSED=$(($T_FINISH-$T_BEGIN))
-echo '---------------------------'
-echo 'Time to build Docker image:'
+echo '--------------------------------'
+echo 'Time to modify the Docker image:'
 echo "$(($T_ELAPSED / 60)) minutes and $(($T_ELAPSED % 60)) seconds"
