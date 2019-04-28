@@ -7,8 +7,8 @@ echo '************************************'
 echo "Docker image to build: $DOCKER_IMAGE"
 echo '************************************'
 
-wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/delete-containers.sh | bash -s "$DOCKER_CONTAINER"
-wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/delete-images.sh | bash -s "$DOCKER_IMAGE"
+wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/delete-containers.sh | bash -s "$DOCKER_CONTAINER"
+wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/delete-images.sh | bash -s "$DOCKER_IMAGE"
 
 DATE=`date +%Y_%m%d_%H%M_%S`
 DIR_LOG=$PWD/log

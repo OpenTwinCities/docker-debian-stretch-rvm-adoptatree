@@ -19,4 +19,4 @@ This repository is used for building the Stage 1 Minimal Debian Buster Docker im
 * This Docker image is deliberately kept small in to minimize the time needed for building, uploading, and downloading this image.  This is useful for getting quick feedback when experimenting.
 
 ## More Information
-General information common to all Docker Debian Buster build repositories is in the [FAQ](https://gitlab.com/rubyonracetracks/docker-debian-buster-common/blob/master/FAQ.md).
+General information common to all Docker Debian Buster build repositories is in the [FAQ](https://gitlab.com/rubyonracetracks/docker-debian-common/blob/master/FAQ.md).
