@@ -1,6 +1,7 @@
 #!/bin/bash
-ABBREV='debian-buster-min-stage1'
+BRANCH='buster'
 OWNER='rubyonracetracks'
+ABBREV="debian-$BRANCH-min-stage1"
 DOCKER_IMAGE="registry.gitlab.com/$OWNER/docker-$ABBREV"
 DOCKER_CONTAINER="container-$ABBREV"
 
