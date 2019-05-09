@@ -1,6 +1,7 @@
 #!/bin/bash
 ABBREV='debian-buster-min-stage1'
-DOCKER_IMAGE="registry.gitlab.com/rubyonracetracks/docker-$ABBREV"
+OWNER='rubyonracetracks'
+DOCKER_IMAGE="registry.gitlab.com/$OWNER/docker-$ABBREV"
 DOCKER_CONTAINER="container-$ABBREV"
 
 echo '************************************'
