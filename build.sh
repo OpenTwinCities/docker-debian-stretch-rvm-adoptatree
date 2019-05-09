@@ -1,9 +1,5 @@
 #!/bin/bash
-BRANCH='buster'
-OWNER='rubyonracetracks'
-ABBREV="debian-$BRANCH-min-stage1"
-DOCKER_IMAGE="registry.gitlab.com/$OWNER/docker-$ABBREV"
-DOCKER_CONTAINER="container-$ABBREV"
+source variables.sh
 
 echo '************************************'
 echo "Docker image to build: $DOCKER_IMAGE"

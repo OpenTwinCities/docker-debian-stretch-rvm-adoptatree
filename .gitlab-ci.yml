@@ -1,3 +1,7 @@
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+
 image: docker:stable
 services:
   - docker:dind
@@ -5,28 +9,26 @@ services:
 stages:
   - test
 
-variables:
-  DOCKER_HOST: tcp://docker:2375
-  DOCKER_DRIVER: overlay2
-
 before_script:
   - echo "$REPO_PASSWORD" | docker login registry.gitlab.com -u "$REPO_USERNAME" --password-stdin
   - docker ps -a
   - docker images -a
   - apk update
   - apk add --no-cache bash
+  - bash build.sh
 
 test_master:
   stage: test
   script:
-    - bash build.sh
+    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
+    - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/push-image.sh | bash -s $DOCKER_IMAGE
   only:
     - master
+
 
 test_other:
   stage: test
   script:
-    - bash build.sh
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
   except:
     - master
