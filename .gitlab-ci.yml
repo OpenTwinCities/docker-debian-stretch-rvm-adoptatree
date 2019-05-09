@@ -20,6 +20,7 @@ before_script:
 test_master:
   stage: test
   script:
+    - source variables.sh
     - echo $DOCKER_IMAGE
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/push-image.sh | bash -s $DOCKER_IMAGE
@@ -30,6 +31,7 @@ test_master:
 test_other:
   stage: test
   script:
+    - source variables.sh
     - echo $DOCKER_IMAGE
     - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
   except:
