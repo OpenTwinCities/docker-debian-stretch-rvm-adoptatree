@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Set environment variables to cut down on annoying warning messages
 export DEBIAN_FRONTEND='noninteractive'
