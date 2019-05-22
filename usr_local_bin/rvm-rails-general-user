@@ -1,0 +1,140 @@
+#!/bin/bash
+set -e
+
+ABBREV='rvm-rails-general'
+ARRAY_RUBY_VERSIONS=('2.6.3' '2.6.0')
+ARRAY_RAILS_VERSIONS=('5.1.6' '5.2.2')
+ARRAY_PG_VERSIONS=('0.20.0' '1.1.4')
+ARRAY_NOKOGIRI_VERSIONS=('1.8.4' '1.10.1')
+ARRAY_FFI_VERSIONS=('1.9.25' '1.10.0')
+
+source ~/.rvm/scripts/rvm # Activate RVM
+
+# BEGIN: activate NVM
+export NVM_DIR="/home/`whoami`/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# END: activate NVM
+
+nvm use node # Activate Node
+
+echo '##########################'
+echo "BEGIN $ABBREV-user actions"
+echo '##########################'
+
+echo '------------------------------'
+echo 'rvm get stable --auto-dotfiles'
+rvm get stable --auto-dotfiles
+
+echo '--------------'
+echo 'rvm list known'
+rvm list known 
+
+RUBY_LATEST=`rvm list known | grep "\[ruby-]" | tail -1 | sed 's/[][]//g' | sed -r 's/^ruby-//'`
+echo '----------------------'
+echo 'Latest version of Ruby'
+echo $RUBY_LATEST
+
+# Add latest version of Ruby to the beginning of ARRAY_RUBY_VERSIONS
+ARRAY_RUBY_VERSIONS=("$RUBY_LATEST" "${ARRAY_RUBY_VERSIONS[@]}")
+
+# Remove duplicates from the list of Ruby versions:
+# Source:
+# https://stackoverflow.com/questions/13648410/how-can-i-get-unique-values-from-an-array-in-bash
+ARRAY_RUBY_VERSIONS=($(echo "${ARRAY_RUBY_VERSIONS[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+
+function install_gem_latest {
+  GEM_NAME=$1
+  echo '---------------------'
+  echo "gem install $GEM_NAME"
+  gem install $GEM_NAME
+}
+
+# Install a single gem version
+function install_gem_version {
+  GEM_NAME=$1
+  GEM_VERSION=$2
+  echo '-------------------------------------'
+  echo "gem install $GEM_NAME -v $GEM_VERSION"
+  gem install $GEM_NAME -v $GEM_VERSION
+}
+
+# Updates Rubygems
+# Installs bundler
+# Installs mailcatcher
+# Installs the latest versions of rails, pg, nokogiri, and ffi
+# Installs selected versions of rails, pg, nokogiri, and ffi
+function install_all_gems {
+  # Certain gems (such as rainbow) require that Rubygems be updated.
+  # The default version of Rubygems may be incompatible with certain
+  # gems, such as rainbow, rubocop, and annotate.
+  echo '-------------------'
+  echo 'gem update --system'
+  gem update --system
+
+  # Installing bundler
+  install_gem_version 'bundler' '1.17.3'
+
+  install_gem_latest 'mailcatcher'
+
+  install_gem_latest 'rails'
+  install_gem_latest 'pg'
+  install_gem_latest 'nokogiri'
+  install_gem_latest 'ffi'
+
+  for version in "${ARRAY_RAILS_VERSIONS[@]}"
+  do
+    install_gem_version 'rails' $version
+  done
+
+  for version in "${ARRAY_PG_VERSIONS[@]}"
+  do
+    install_gem_version 'pg' $version
+  done
+
+  for version in "${ARRAY_NOKOGIRI_VERSIONS[@]}"
+  do
+    install_gem_version 'nokogiri' $version
+  done
+
+  for version in "${ARRAY_FFI_VERSIONS[@]}"
+  do
+    install_gem_version 'ffi' $version
+  done
+}
+
+# Input parameter: 'ruby-x.y'
+function install_ruby_version {
+  ruby_version=$1
+  echo '+++++++++++++++++++++++++++++++++++++'
+  echo "BEGIN: time rvm install $ruby_version"
+  echo '+++++++++++++++++++++++++++++++++++++'
+  time rvm install $ruby_version
+  echo '+++++++++++++++++++++++++++++++++++'
+  echo "END: time rvm install $ruby_version"
+  echo '+++++++++++++++++++++++++++++++++++'
+  echo ' /\'
+  echo '/  \'
+  echo "Time to install Ruby $ruby_version"
+  rvm use $ruby_version
+  time install_all_gems
+  echo ' /\'
+  echo '/  \'
+  echo "Time to install all gems in Ruby $rubyversion"  
+}
+
+function time_install_ruby_version {
+  RUBY_VERSION=$1
+  time install_ruby_version $RUBY_VERSION
+  echo ' /\'
+  echo '/  \'
+  echo "Time to install Ruby $RUBY_VERSION and gems"
+  rvm use $RUBY_VERSION
+} 
+
+for ((i=${#ARRAY_RUBY_VERSIONS[@]}-1; i>=0; i--)); do
+  time_install_ruby_version "${ARRAY_RUBY_VERSIONS[$i]}"
+done
+
+echo '#############################'
+echo "FINISHED $ABBREV-user actions"
+echo '#############################'

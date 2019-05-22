@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ABBREV='min-rvm'
+export ABBREV='rvm-rails-general'
 export OWNER='rubyonracetracks'
 export SUITE='buster'
 export DISTRO='debian'

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='min-rvm'
+ABBREV='rvm-rails-general'
 
 # Set the name of the regular user
 REGULAR_USER='vagrant' # To be changed later if necessary
@@ -33,20 +33,7 @@ echo '##########################'
 
 echo "/usr/local/bin/check-$ABBREV" >> /usr/local/bin/check
 
-echo '++++++++++++++++++++++++++++++++++++++++++'
-echo 'BEGIN installing RVM prerequisites as root'
-echo '++++++++++++++++++++++++++++++++++++++++++'
-
-# Needed for RVM itself:
-apt-get install -y curl gpg
-
-# Needed to install Ruby versions in RVM
-apt-get install -y gawk autoconf automake bison libgdbm-dev libncurses5-dev \
-libtool libyaml-dev libgmp-dev libreadline-dev
-
-echo '+++++++++++++++++++++++++++++++++++++++++++++'
-echo 'FINISHED installing RVM prerequisites as root'
-echo '+++++++++++++++++++++++++++++++++++++++++++++'
+echo 'Nothing to do as root'
 
 echo '#############################'
 echo "FINISHED $ABBREV-root actions"

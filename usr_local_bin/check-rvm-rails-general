@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='min-rvm'
+ABBREV='rvm-rails-general'
 
 # BEGIN: activate NVM
 export NVM_DIR="/home/`whoami`/.nvm"
@@ -16,13 +16,37 @@ echo '###########################'
 echo "BEGIN $ABBREV sanity checks"
 echo '###########################'
 
-echo '-------------'
-echo 'rvm --version'
-rvm --version
-
 echo '--------'
 echo 'rvm list'
 rvm list
+
+echo '-------'
+echo 'ruby -v'
+ruby -v
+
+echo '--------'
+echo 'rails -v'
+rails -v
+
+echo '------------------'
+echo 'gem list "^rails$"'
+gem list "^rails$"
+
+echo '---------------------'
+echo 'gem list "^nokogiri$"'
+gem list "^nokogiri$"
+
+echo '---------------'
+echo 'gem list "^pg$"'
+gem list "^pg$"
+
+echo '----------------'
+echo 'gem list "^ffi$"'
+gem list "^ffi$"
+
+echo '------------------------'
+echo 'gem list "^mailcatcher$"'
+gem list "^mailcatcher$"
 
 echo '##############################'
 echo "FINISHED $ABBREV sanity checks"
