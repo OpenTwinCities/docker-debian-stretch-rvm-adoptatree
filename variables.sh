@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ABBREV='min-stage2'
+export ABBREV='min-rvm'
 export OWNER='rubyonracetracks'
 export SUITE='buster'
 export DISTRO='debian'
