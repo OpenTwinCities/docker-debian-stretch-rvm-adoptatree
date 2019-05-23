@@ -12,7 +12,7 @@ nvm use node # Activate Node
 
 source ~/.rvm/scripts/rvm # Activate RVM
 
-wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-rbenv-rails-general/raw/master/usr_local_bin/check-rbenv-rails-general | bash
+wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-general/raw/master/usr_local_bin/check-rvm-rails-general | bash
 
 echo '###########################'
 echo "BEGIN $ABBREV sanity checks"
