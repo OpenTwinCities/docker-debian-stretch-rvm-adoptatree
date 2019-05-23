@@ -1,0 +1,17 @@
+services:
+  - docker
+
+before_script:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - sudo apt-get install -y bash
+
+script:
+  - bash build.sh
+  - source variables.sh
+  - wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/test-image.sh | bash -s $DOCKER_IMAGE
+
+after_success:
+  - source variables.sh
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then
+      wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-common/raw/master/push-image.sh | bash -s $DOCKER_IMAGE;
+    fi
