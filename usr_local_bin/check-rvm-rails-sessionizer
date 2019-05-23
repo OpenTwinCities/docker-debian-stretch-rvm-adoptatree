@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-rubymn2'
+ABBREV='rvm-rails-sessionizer'
 
 # BEGIN: activate NVM
 export NVM_DIR="/home/`whoami`/.nvm"
@@ -18,7 +18,9 @@ echo '###########################'
 echo "BEGIN $ABBREV sanity checks"
 echo '###########################'
 
-echo 'No additional sanity checks'
+echo '------------'
+echo 'phantomjs -v'
+phantomjs -v
 
 echo '##############################'
 echo "FINISHED $ABBREV sanity checks"

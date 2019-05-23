@@ -1,12 +1,12 @@
-# Docker Debian Buster - RVM - Rails - General
+# Docker Debian Stretch - RVM - Rails - General
 
-This repository is used for building the RVM Rails General Debian Buster Docker image [Ruby on Racetracks](https://www.rubyonracetracks.com/).
+This repository is used for building a custom Docker image for [Minnestar's Sessionizer App](https://github.com/minnestar/sessionizer).
 
 ## Name of This Docker Image
-[registry.gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-rubymn2](https://gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-rubymn2/container_registry)
+[registry.gitlab.com/rubyonracetracks/docker-debian-stretch-rvm-rails-stretch](https://gitlab.com/rubyonracetracks/docker-debian-stretch-rvm-rails-stretch/container_registry)
 
 ## Upstream Docker Image
-[registry.gitlab.com/rubyonracetracks/docker-debian-buster-min-rvm](https://gitlab.com/rubyonracetracks/docker-debian-buster-min-rvm/container_registry)
+[registry.gitlab.com/rubyonracetracks/docker-debian-stretch-min-rvm](https://gitlab.com/rubyonracetracks/docker-debian-stretch-min-rvm/container_registry)
 
 ## What's Added
 * The latest versions of the rails, pg, nokogiri, and ffi gems

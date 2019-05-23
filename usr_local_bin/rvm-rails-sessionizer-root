@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-rubymn2'
+ABBREV='rvm-rails-sessionizer'
 
 # Set the name of the regular user
 REGULAR_USER='vagrant' # To be changed later if necessary
@@ -33,7 +33,24 @@ echo '##########################'
 
 echo "/usr/local/bin/check-$ABBREV" >> /usr/local/bin/check
 
-echo 'Nothing to do as root'
+echo '++++++++++++++++++++++++++++++++++++++++++++'
+echo 'BEGIN installing prerequisites for PhantomJS'
+echo '++++++++++++++++++++++++++++++++++++++++++++'
+
+# From https://github.com/OpenTwinCities/adopt-a-tree
+# and https://gist.github.com/julionc/7476620
+
+echo '---------------------------------------------------------------------------'
+echo 'apt-get install -y libffi-dev build-essential chrpath libssl-dev libxft-dev'
+apt-get install -y libffi-dev build-essential chrpath libssl-dev libxft-dev
+
+echo '----------------------------------------------------------------------------------'
+echo 'apt-get install -y libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev'
+apt-get install -y libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
+
+echo '+++++++++++++++++++++++++++++++++++++++++++++++'
+echo 'FINISHED installing prerequisites for PhantomJS'
+echo '+++++++++++++++++++++++++++++++++++++++++++++++'
 
 echo '#############################'
 echo "FINISHED $ABBREV-root actions"

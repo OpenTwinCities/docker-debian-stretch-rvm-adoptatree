@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-rubymn2'
-ARRAY_RUBY_VERSIONS=('2.6.3' '2.6.0')
-ARRAY_RAILS_VERSIONS=('5.2.2')
-ARRAY_PG_VERSIONS=('1.1.3')
-ARRAY_NOKOGIRI_VERSIONS=('1.9.1')
-ARRAY_FFI_VERSIONS=('1.9.25')
+ABBREV='rvm-rails-sessionizer'
+ARRAY_RUBY_VERSIONS=('2.6.3')
+ARRAY_RAILS_VERSIONS=('5.1.4')
+ARRAY_PG_VERSIONS=('0.21.0')
+ARRAY_NOKOGIRI_VERSIONS=('1.8.1')
+ARRAY_FFI_VERSIONS=('1.9.18')
 
 source ~/.rvm/scripts/rvm # Activate RVM
 
@@ -20,6 +20,14 @@ nvm use node # Activate Node
 echo '##########################'
 echo "BEGIN $ABBREV-user actions"
 echo '##########################'
+
+echo '---------------------------------'
+echo 'npm install -g phantomjs-prebuilt'
+npm install -g phantomjs-prebuilt
+
+echo '------------'
+echo 'phantomjs -v'
+phantomjs -v
 
 echo '------------------------------'
 echo 'rvm get stable --auto-dotfiles'
