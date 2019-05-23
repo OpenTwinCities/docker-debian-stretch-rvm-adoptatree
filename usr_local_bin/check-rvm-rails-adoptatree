@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-sessionizer'
+ABBREV='rvm-rails-adoptatree'
 
 # BEGIN: activate NVM
 export NVM_DIR="/home/`whoami`/.nvm"

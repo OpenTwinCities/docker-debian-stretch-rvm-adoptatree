@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-sessionizer'
-ARRAY_RUBY_VERSIONS=('2.6.3')
-ARRAY_RAILS_VERSIONS=('5.1.4')
-ARRAY_PG_VERSIONS=('0.21.0')
-ARRAY_NOKOGIRI_VERSIONS=('1.8.1')
-ARRAY_FFI_VERSIONS=('1.9.18')
+ABBREV='rvm-rails-adoptatree'
+ARRAY_RUBY_VERSIONS=('2.6.0')
+ARRAY_RAILS_VERSIONS=('5.2.3')
+ARRAY_PG_VERSIONS=('1.1.4')
+ARRAY_NOKOGIRI_VERSIONS=('1.10.2')
+ARRAY_FFI_VERSIONS=('1.10.0')
 
 source ~/.rvm/scripts/rvm # Activate RVM
 
