@@ -4,7 +4,7 @@
 This repository is used for building a custom Docker image for the Open Twin Cities [Adopt-A-Tree App](https://github.com/OpenTwinCities/adopt-a-tree).
 
 ## Name of This Docker Image
-[OpenTwinCities/debian-stretch-rvm-rails-stretch](https://cloud.docker.com/u/opentwincities/repository/docker/opentwincities/debian-stretch-rvm-rails-adoptatree)
+[OpenTwinCities/debian-stretch-rvm-rails-adoptatree](https://cloud.docker.com/u/opentwincities/repository/docker/opentwincities/debian-stretch-rvm-rails-adoptatree)
 
 ## Upstream Docker Image
 [registry.gitlab.com/rubyonracetracks/docker-debian-stretch-min-rvm](https://gitlab.com/rubyonracetracks/docker-debian-stretch-min-rvm/container_registry)
