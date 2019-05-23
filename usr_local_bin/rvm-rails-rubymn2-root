@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ABBREV='rvm-rails-general'
+ABBREV='rvm-rails-rubymn2'
 
 # Set the name of the regular user
 REGULAR_USER='vagrant' # To be changed later if necessary

@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+ABBREV='rvm-rails-rubymn2'
+
+# BEGIN: activate NVM
+export NVM_DIR="/home/`whoami`/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# END: activate NVM
+
+nvm use node # Activate Node
+
+source ~/.rvm/scripts/rvm # Activate RVM
+
+wget -O - https://gitlab.com/rubyonracetracks/docker-debian-buster-rbenv-rails-general/raw/master/usr_local_bin/check-rbenv-rails-general | bash
+
+echo '###########################'
+echo "BEGIN $ABBREV sanity checks"
+echo '###########################'
+
+echo 'No additional sanity checks'
+
+echo '##############################'
+echo "FINISHED $ABBREV sanity checks"
+echo '##############################'

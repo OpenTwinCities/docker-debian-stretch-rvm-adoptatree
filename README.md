@@ -3,7 +3,7 @@
 This repository is used for building the RVM Rails General Debian Buster Docker image [Ruby on Racetracks](https://www.rubyonracetracks.com/).
 
 ## Name of This Docker Image
-[registry.gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-general](https://gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-general/container_registry)
+[registry.gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-rubymn2](https://gitlab.com/rubyonracetracks/docker-debian-buster-rvm-rails-rubymn2/container_registry)
 
 ## Upstream Docker Image
 [registry.gitlab.com/rubyonracetracks/docker-debian-buster-min-rvm](https://gitlab.com/rubyonracetracks/docker-debian-buster-min-rvm/container_registry)
