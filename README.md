@@ -1,4 +1,5 @@
 # Docker Debian Stretch - RVM - Rails - Adopt-A-Tree
+[![Build Status](https://travis-ci.org/OpenTwinCities/docker-debian-stretch-rvm-rails-adoptatree.svg?branch=master)](https://travis-ci.org/OpenTwinCities/docker-debian-stretch-rvm-rails-adoptatree)
 
 This repository is used for building a custom Docker image for the Open Twin Cities [Adopt-A-Tree App](https://github.com/OpenTwinCities/adopt-a-tree).
 
